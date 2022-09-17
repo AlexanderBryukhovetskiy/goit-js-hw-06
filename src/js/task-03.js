@@ -21,7 +21,6 @@ const images = [
 ];
 
 const list = document.querySelector('.gallery');
-console.log(list);
 
 const itemsRef = images.map(image => 
   `<li class="list__item">
