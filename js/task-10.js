@@ -12,13 +12,11 @@ const addDivsBtn = document.querySelector("[data-create]");
 const destroyBtn = document.querySelector("[data-destroy]");
 const divToInsertBoxes = document.querySelector("div#boxes");
 
-console.log(divToInsertBoxes);
-
 addDivsBtn.addEventListener('click', createBoxes);
 
 function createBoxes(event) {
   const amount = Number(`${divsAmont.value}`);
-  console.log(amount);
+  //console.log(amount);
 
   const divElements = [];
   
@@ -28,10 +26,8 @@ function createBoxes(event) {
       console.log("divSize: ", divSize);
 
       divElement.style.backgroundColor = getRandomHexColor();
-      divElement.height = `${divSize}`;
-      divElement.width = divSize;
-
-      console.dir(divElement);
+      divElement.style.height = divSize;
+      divElement.stywidth = divSize;
 
       divElements.push(divElement);
   };
@@ -39,6 +35,8 @@ function createBoxes(event) {
    console.log(divElements);
   
    divToInsertBoxes.append(...divElements);
+
+   console.log(divToInsertBoxes);
 }
 
 
