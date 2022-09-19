@@ -2,5 +2,12 @@
 
 
 const range = document.querySelector("input#font-size-control");
+const rangableText = document.querySelector("span#text");
 
+range.value = 16;
 
+range.addEventListener("change", onInputChange);
+
+function onInputChange (event) { 
+    rangableText.style.fontSize = event.currentTarget.value + "px";    
+}
