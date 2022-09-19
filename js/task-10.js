@@ -26,8 +26,8 @@ function createBoxes(event) {
       console.log("divSize: ", divSize);
 
       divElement.style.backgroundColor = getRandomHexColor();
-      divElement.style.height = divSize;
-      divElement.stywidth = divSize;
+      divElement.style.height = `${divSize}`;
+      divElement.style.width = divSize;
 
       divElements.push(divElement);
   };
