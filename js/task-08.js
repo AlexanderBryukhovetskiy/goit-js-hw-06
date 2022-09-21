@@ -13,7 +13,6 @@
 
 const form = document.querySelector(".login-form");
 
-
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   
@@ -21,10 +20,16 @@ form.addEventListener("submit", (event) => {
     elements: { email, password }
   } = event.currentTarget;
 
+  const userData = {
+    email: email.value,
+    password: password.value   
+  };
+
   if (email.value === "" || password.value === "") {
     return alert("Please fill in all the fields!");
   }
 
-  console.log(`Login: ${email.value}, Password: ${password.value}`);
+  console.log(userData);
+  
   event.currentTarget.reset();
 });
