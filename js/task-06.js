@@ -22,6 +22,7 @@ function onInputBlur(event){
     console.log(`Number of entered symbols: ${userInputLength}`);
 
     if (userInputLength == input.getAttribute("data-length")){
+       event.currentTarget.classList.remove("invalid");
        event.currentTarget.classList.add("valid");
     } else {
        event.currentTarget.classList.add("invalid");

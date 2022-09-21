@@ -14,37 +14,29 @@ const divToInsertBoxes = document.querySelector("div#boxes");
 
 addDivsBtn.addEventListener('click', createBoxes);
 
-function createBoxes(event) {
-  const amount = Number(`${divsAmont.value}`);
-  //console.log(amount);
+let size = 30;
 
+function createBoxes(event) {
+  const amount = Number(divsAmont.value);
   const divElements = [];
   
   for (let i = 0; i < amount; i += 1) {    
       const divElement = document.createElement('div');
-      const divSize = (30 + i * 10).toString();
-      console.log("divSize: ", divSize);
-
       divElement.style.backgroundColor = getRandomHexColor();
-      divElement.style.height = `${divSize}`;
-      divElement.style.width = divSize;
+      divElement.style.height = `${size}px`;
+      divElement.style.width = `${size}px`;
 
       divElements.push(divElement);
-  };
+
+      size +=10;
+  }
  
-   console.log(divElements);
-  
    divToInsertBoxes.append(...divElements);
-
-   console.log(divToInsertBoxes);
 }
-
 
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
-
-
 
 destroyBtn.addEventListener('click', destroyBoxes);
 
